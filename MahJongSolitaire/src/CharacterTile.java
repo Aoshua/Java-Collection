@@ -8,6 +8,7 @@ public class CharacterTile extends Tile
     private 	static 	HashMap<Character,Character> 	map = new HashMap<>();
     //private 	static 	HashMap<Character,Character> 	lookup = new HashMap<>();
     private 	char 	symbol;
+    private     String  wan = "\u842c";
 
     public CharacterTile(char symbol)
     {
@@ -64,18 +65,32 @@ public class CharacterTile extends Tile
         super.paintComponent(g);
 
         Font topChar = g.getFont();
-        topChar = topChar.deriveFont(Font.BOLD, 32);
+        topChar = topChar.deriveFont(Font.BOLD, 50);
+
+        Font englishValue = g.getFont();
+        englishValue = englishValue.deriveFont(20);
+
+        Font chineseValue = g.getFont();
+        chineseValue = chineseValue.deriveFont(Font.PLAIN, 32);
+
+        String caption = "" + map.get(this.symbol);
+
         g.setFont(topChar);
+        FontMetrics fm = g.getFontMetrics();
+        int wid = fm.stringWidth(caption);
+        g.setColor(Color.BLACK);
+        g.drawString(caption, (getWidth() - wid) / 2,55);
 
-        if(map.get(this.symbol) == '\u4E00' )
-        {
-            String caption = "\u4E00";
+        g.setFont(englishValue);
+        g.setColor(Color.RED);
+        g.drawString("" + this.symbol, 67, 23);
 
-            FontMetrics fm = g.getFontMetrics();
-            int wid = fm.stringWidth(caption);
-            g.setColor(Color.BLACK);
-            g.drawString(caption, (getWidth() - wid) / 2, 35);
-        }
+        g.setFont(chineseValue);
+        FontMetrics fm1 = g.getFontMetrics();
+        int wid1 = fm1.stringWidth(wan);
+        g.setColor(Color.RED);
+        g.drawString(wan, (getWidth() - wid1) / 2,(getHeight() / 2)+ 25);
+
     }
 
     public static void main(String[] args)
