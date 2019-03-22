@@ -6,7 +6,6 @@ public class CharacterTile extends Tile
 {
     private 	static 	HashMap<Character, String> 	labels = new HashMap<>();
     private 	static 	HashMap<Character,Character> 	map = new HashMap<>();
-    //private 	static 	HashMap<Character,Character> 	lookup = new HashMap<>();
     private 	char 	symbol;
     private     String  wan = "\u842c";
 
@@ -64,8 +63,9 @@ public class CharacterTile extends Tile
     {
         super.paintComponent(g);
 
+        // Establish fonts:
         Font topChar = g.getFont();
-        topChar = topChar.deriveFont(Font.BOLD, 50);
+        topChar = topChar.deriveFont(Font.BOLD, 40);
 
         Font englishValue = g.getFont();
         englishValue = englishValue.deriveFont(20);
@@ -73,23 +73,63 @@ public class CharacterTile extends Tile
         Font chineseValue = g.getFont();
         chineseValue = chineseValue.deriveFont(Font.PLAIN, 32);
 
-        String caption = "" + map.get(this.symbol);
+        Font mainChar = g.getFont();
+        mainChar = mainChar.deriveFont(Font.BOLD, 60);
 
-        g.setFont(topChar);
-        FontMetrics fm = g.getFontMetrics();
-        int wid = fm.stringWidth(caption);
-        g.setColor(Color.BLACK);
-        g.drawString(caption, (getWidth() - wid) / 2,55);
+        // Establish colors:
+        /*final Color PINE_GREEN = new Color(51, 102, 0);
+        final Color BLOOD_RED = new Color(170, 30 , 30);*/
 
+        // Draw English value
         g.setFont(englishValue);
         g.setColor(Color.RED);
         g.drawString("" + this.symbol, 67, 23);
 
-        g.setFont(chineseValue);
-        FontMetrics fm1 = g.getFontMetrics();
-        int wid1 = fm1.stringWidth(wan);
-        g.setColor(Color.RED);
-        g.drawString(wan, (getWidth() - wid1) / 2,(getHeight() / 2)+ 25);
+        String caption = "" + map.get(this.symbol);                     // Determine top Chinese character
+
+        if(this.symbol == 'F')
+        {
+            // Draw main Chinese character
+            g.setFont(mainChar);
+            FontMetrics fm = g.getFontMetrics();
+            int wid = fm.stringWidth(caption);
+            g.setColor(PINE_GREEN);
+            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+        }
+        if(this.symbol == 'C')
+        {
+            // Draw main Chinese character
+            g.setFont(mainChar);
+            FontMetrics fm = g.getFontMetrics();
+            int wid = fm.stringWidth(caption);
+            g.setColor(BLOOD_RED);
+            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+        }
+        if(this.symbol == 'N' || this.symbol == 'E' || this.symbol == 'W' || this.symbol == 'S')
+        {
+            // Draw main Chinese character
+            g.setFont(mainChar);
+            FontMetrics fm = g.getFontMetrics();
+            int wid = fm.stringWidth(caption);
+            g.setColor(Color.BLACK);
+            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+        }
+        if((int)this.symbol > 48 && (int)this.symbol < 58)
+        {
+            // Draw top Chinese character
+            g.setFont(topChar);
+            FontMetrics fm = g.getFontMetrics();
+            int wid = fm.stringWidth(caption);
+            g.setColor(Color.BLACK);
+            g.drawString(caption, (getWidth() - wid) / 2, 55);
+
+            // Draw "wan"
+            g.setFont(chineseValue);
+            FontMetrics fm1 = g.getFontMetrics();
+            int wid1 = fm1.stringWidth(wan);
+            g.setColor(BLOOD_RED);
+            g.drawString(wan, (getWidth() - wid1) / 2, (getHeight() / 2) + 25);
+        }
 
     }
 

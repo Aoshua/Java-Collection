@@ -3,6 +3,13 @@ import java.awt.*;
 
 public class Tile extends JPanel
 {
+    private final Color BRIGHT_BLUE = new Color(30, 144, 255);
+    private final Color MEDIUM_PURPLE = new Color(122, 55, 139);
+    private final Color CREAM = new Color(246, 215, 169);
+    private final Color OFF_WHITE = new Color(250, 245, 245);
+    final Color PINE_GREEN = new Color(51, 102, 0);
+    final Color LIGHT_GREEN = new Color(20, 170, 20);
+    final Color BLOOD_RED = new Color(170, 30 , 30);
 
     public Tile()
     {
@@ -31,20 +38,20 @@ public class Tile extends JPanel
 
         super.paintComponent(g);
 
-        final Color BRIGHT_BLUE = new Color(30, 144, 255);
+        /*final Color BRIGHT_BLUE = new Color(30, 144, 255);
         final Color MEDIUM_PURPLE = new Color(122, 55, 139);
-        final Color NAVAJO_WHITE3 = new Color(205, 179, 139);
-        final Color NAVAJO_WHITE2 = new Color(238, 207, 161);
+        final Color CREAM = new Color(246, 215, 169);
+        final Color OFF_WHITE = new Color(250, 245, 245);*/
 
         Graphics2D	g2 = (Graphics2D)g;
 
         // Primary tile face:
-        GradientPaint grad0 = new GradientPaint(110, 23, NAVAJO_WHITE2 , 100, 123, NAVAJO_WHITE3);
+        GradientPaint grad0 = new GradientPaint(110, 23, OFF_WHITE , 100, 123, CREAM);
         g2.setPaint(grad0);
         g2.fill(new Rectangle (0, 8, 80, 105));
 
         // Side of tile:
-        GradientPaint grad1 = new GradientPaint(80, 148, NAVAJO_WHITE3,80, 148, NAVAJO_WHITE2);
+        GradientPaint grad1 = new GradientPaint(80, 0, CREAM,80, 148, OFF_WHITE);
         Polygon p0 = drawPolygon(80,80, 85,85, 8, 113,109, 4);
         g2.setPaint(grad1);
         g2.fill(p0);
@@ -56,7 +63,7 @@ public class Tile extends JPanel
         g2.fill(p1);
 
         // Top of tile:
-        GradientPaint grad3 = new GradientPaint(80, 148, NAVAJO_WHITE2,80, 123, NAVAJO_WHITE3);
+        GradientPaint grad3 = new GradientPaint(80, 10, OFF_WHITE,0, 0, CREAM);
         Polygon p2 = drawPolygon(0,80, 85,5, 8, 8,4, 4);
         g2.setPaint(grad3);
         g2.fill(p2);
