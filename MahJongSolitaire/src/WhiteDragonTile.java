@@ -8,7 +8,7 @@ public class WhiteDragonTile extends Tile
         setToolTipText("White Dragon");
     }
 
-    public String toString()
+    @Override public String toString()
     {
         return "White Dragon";
     }
@@ -23,7 +23,7 @@ public class WhiteDragonTile extends Tile
         return p0;
     }
 
-    public void paintComponent(Graphics g)
+    @Override public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
 

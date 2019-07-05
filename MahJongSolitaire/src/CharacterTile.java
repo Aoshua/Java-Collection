@@ -12,14 +12,15 @@ public class CharacterTile extends Tile
     public CharacterTile(char symbol)
     {
         this.symbol = symbol;
+        setToolTipText(toString());
     }
 
-    public boolean matches(Tile other)
+    @Override public boolean matches(Tile other)
     {
         return super.matches(other) && symbol == ((CharacterTile)other).symbol;
     }
 
-    public String toString()
+    @Override public String toString()
     {
         return labels.get(symbol);
     }
@@ -59,7 +60,7 @@ public class CharacterTile extends Tile
             labels.put(c, "Character " + c);
     }
 
-    public void paintComponent(Graphics g)
+    @Override public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
 
@@ -76,10 +77,6 @@ public class CharacterTile extends Tile
         Font mainChar = g.getFont();
         mainChar = mainChar.deriveFont(Font.BOLD, 60);
 
-        // Establish colors:
-        /*final Color PINE_GREEN = new Color(51, 102, 0);
-        final Color BLOOD_RED = new Color(170, 30 , 30);*/
-
         // Draw English value
         g.setFont(englishValue);
         g.setColor(Color.RED);
@@ -94,7 +91,7 @@ public class CharacterTile extends Tile
             FontMetrics fm = g.getFontMetrics();
             int wid = fm.stringWidth(caption);
             g.setColor(PINE_GREEN);
-            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+            g.drawString(caption, (TILE_WIDTH - wid) / 2, ((TILE_HEIGHT) / 2) + 30);
         }
         if(this.symbol == 'C')
         {
@@ -103,7 +100,7 @@ public class CharacterTile extends Tile
             FontMetrics fm = g.getFontMetrics();
             int wid = fm.stringWidth(caption);
             g.setColor(BLOOD_RED);
-            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+            g.drawString(caption, (TILE_WIDTH - wid) / 2, ((TILE_HEIGHT) / 2) + 30);
         }
         if(this.symbol == 'N' || this.symbol == 'E' || this.symbol == 'W' || this.symbol == 'S')
         {
@@ -112,7 +109,7 @@ public class CharacterTile extends Tile
             FontMetrics fm = g.getFontMetrics();
             int wid = fm.stringWidth(caption);
             g.setColor(Color.BLACK);
-            g.drawString(caption, (getWidth() - wid) / 2, ((getHeight() - wid) / 2) + 45);
+            g.drawString(caption, (TILE_WIDTH - wid) / 2, ((TILE_HEIGHT) / 2) + 30);
         }
         if((int)this.symbol > 48 && (int)this.symbol < 58)
         {
@@ -121,14 +118,14 @@ public class CharacterTile extends Tile
             FontMetrics fm = g.getFontMetrics();
             int wid = fm.stringWidth(caption);
             g.setColor(Color.BLACK);
-            g.drawString(caption, (getWidth() - wid) / 2, 55);
+            g.drawString(caption, (TILE_WIDTH - wid) / 2, 55);
 
             // Draw "wan"
             g.setFont(chineseValue);
             FontMetrics fm1 = g.getFontMetrics();
             int wid1 = fm1.stringWidth(wan);
             g.setColor(BLOOD_RED);
-            g.drawString(wan, (getWidth() - wid1) / 2, (getHeight() / 2) + 25);
+            g.drawString(wan, (TILE_WIDTH - wid1) / 2, (TILE_HEIGHT / 2) + 40);
         }
 
     }
@@ -142,10 +139,6 @@ public class CharacterTile extends Tile
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Character Tiles");
         frame.add(scroller);
-
-        // Try something like this if your tiles don't fit on the screen.
-        // Replace "tile width" and "tile height" with your values.
-        //scroller.setPreferredSize(new Dimension(400, 400));
 
         tiles.add(new CharacterTile('1'));
         tiles.add(new CharacterTile('2'));

@@ -3,7 +3,7 @@ import	java.util.*;
 
 public class TileDeck
 {
-    private	ArrayList<Tile>	deck = new ArrayList<>(144);
+    protected ArrayList<Tile> deck = new ArrayList<>(144); // Changed this to public for lab 6
 
     public TileDeck()
     {
@@ -43,16 +43,27 @@ public class TileDeck
         deck.add(new SeasonTile("Summer"));
         deck.add(new SeasonTile("Fall"));
         deck.add(new SeasonTile("Winter"));
+
     }
 
-    public void shuffle() { Collections.shuffle(deck); }
+    public void shuffle()
+    {
+        Collections.shuffle(deck);
+    }
 
-    public void shuffle(long gameNumber) { Collections.shuffle(deck, new Random(gameNumber)); }
+    public void shuffle(long gameNumber)
+    {
+        Random 	rand = new Random(gameNumber);
+        Collections.shuffle(deck, rand);
+    }
+
 
     public Tile deal()
     {
-        if(deck.isEmpty()){ return null;}
-        return deck.remove(deck.size() - 1);
+        if (deck.size() > 0)
+            return deck.remove(deck.size() - 1);
+        else
+            return null;
     }
 
 }

@@ -4,10 +4,8 @@ import java.awt.*;
 public class BambooTile extends RankTile
 {
     private Bamboo[] bamboos;
-    private int xDim = 86;
-    private int yDim = 118;
-    private int width = 14;
-    private int height = 31;
+    private int width = 8;
+    private int height = 20;
 
     public BambooTile(int rank)
     {
@@ -24,42 +22,42 @@ public class BambooTile extends RankTile
 
             case 2:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/2) - (width/2);
-                bamboos[0].y = (yDim/3) - (height/2);
+                bamboos[0].x = (TILE_WIDTH/2) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/3) - (height/2);
                 bamboos[0].color = LIGHT_GREEN;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
-                bamboos[1].y = (yDim/3) + (height - (height/2) + 6);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
+                bamboos[1].y = (TILE_HEIGHT/3) + (height - (height/2) + 16);
                 bamboos[1].color = BLOOD_RED;
                 break;
 
             case 3:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width/2);
-                bamboos[0].y = (yDim/4) - (height/2);
+                bamboos[0].x = (TILE_WIDTH/4) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/4) - (height/2);
                 bamboos[0].color = Color.BLUE;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
-                bamboos[1].y = (yDim/2) - (height/2);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
+                bamboos[1].y = (TILE_HEIGHT/2) - (height/2);
                 bamboos[1].color = BLOOD_RED;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width/2);
-                bamboos[2].y = (yDim/4)*3 - (height/2);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width/2);
+                bamboos[2].y = (TILE_HEIGHT/4)*3 - (height/2);
                 bamboos[2].color = LIGHT_GREEN;
                 break;
 
             case 4:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/3) - (width/2);
-                bamboos[0].y = (yDim/3) - (height/2);
+                bamboos[0].x = (TILE_WIDTH/3) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/3) - (height/2);
                 bamboos[0].color = Color.BLUE;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/3)*2 - (width/2);
-                bamboos[1].y = (yDim/3)*2 - (height/2);
+                bamboos[1].x = (TILE_WIDTH/3)*2 - (width/2);
+                bamboos[1].y = (TILE_HEIGHT/3)*2 - (height/2);
                 bamboos[1].color = Color.BLUE;
 
                 bamboos[2] = new Bamboo();
@@ -75,18 +73,18 @@ public class BambooTile extends RankTile
 
             case 5:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width/2);
-                bamboos[0].y = (yDim/4) - (height/2);
+                bamboos[0].x = (TILE_WIDTH/4) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/4) - (height/2);
                 bamboos[0].color = Color.BLUE;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
-                bamboos[1].y = (yDim/2) - (height/2);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
+                bamboos[1].y = (TILE_HEIGHT/2) - (height/2);
                 bamboos[1].color = BLOOD_RED;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width/2);
-                bamboos[2].y = (yDim/4)*3 - (height/2);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width/2);
+                bamboos[2].y = (TILE_HEIGHT/4)*3 - (height/2);
                 bamboos[2].color = Color.BLUE;
 
                 bamboos[3] = new Bamboo();
@@ -102,23 +100,23 @@ public class BambooTile extends RankTile
 
             case 6:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width/2);
-                bamboos[0].y = (yDim/3) - (height/2);
+                bamboos[0].x = (TILE_WIDTH/4) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/3) - (height/2);
                 bamboos[0].color = LIGHT_GREEN;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
                 bamboos[1].y = bamboos[0].y;
                 bamboos[1].color = LIGHT_GREEN;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width/2);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width/2);
                 bamboos[2].y = bamboos[0].y;
                 bamboos[2].color = LIGHT_GREEN;
 
                 bamboos[3] = new Bamboo();
                 bamboos[3].x =  bamboos[0].x;
-                bamboos[3].y = (yDim/3)*2 - (height/2);
+                bamboos[3].y = (TILE_HEIGHT/3)*2 - (height/2);
                 bamboos[3].color = Color.BLUE;
 
                 bamboos[4] = new Bamboo();
@@ -134,23 +132,23 @@ public class BambooTile extends RankTile
 
             case 7:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width/2);
-                bamboos[0].y = (yDim/3) + 6;
+                bamboos[0].x = (TILE_WIDTH/4) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/3) + 6;
                 bamboos[0].color = LIGHT_GREEN;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
                 bamboos[1].y = bamboos[0].y;
                 bamboos[1].color = Color.BLUE;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width/2);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width/2);
                 bamboos[2].y = bamboos[0].y;
                 bamboos[2].color = LIGHT_GREEN;
 
                 bamboos[3] = new Bamboo();
                 bamboos[3].x =  bamboos[0].x;
-                bamboos[3].y = (yDim/3)*2;
+                bamboos[3].y = (TILE_HEIGHT/3)*2 + 6;
                 bamboos[3].color = LIGHT_GREEN;
 
                 bamboos[4] = new Bamboo();
@@ -164,30 +162,30 @@ public class BambooTile extends RankTile
                 bamboos[5].color = LIGHT_GREEN;
 
                 bamboos[6] = new Bamboo();
-                bamboos[6].x = (xDim/2) - (width/2);
-                bamboos[6].y = (yDim/3) - (height) + 4;
+                bamboos[6].x = (TILE_WIDTH/2) - (width/2);
+                bamboos[6].y = (TILE_HEIGHT/3) - (height + 6);
                 bamboos[6].color = BLOOD_RED;
                 break;
 
             case 8:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width - 6);
-                bamboos[0].y = (yDim/4) - 18;
+                bamboos[0].x = (TILE_WIDTH/4) - (width - 6);
+                bamboos[0].y = (TILE_HEIGHT/4) - 18;
                 bamboos[0].color = LIGHT_GREEN;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width - 8);
+                bamboos[1].x = (TILE_WIDTH/2) - (width - 8);
                 bamboos[1].y = bamboos[0].y;
                 bamboos[1].color = LIGHT_GREEN;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width - 12);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width - 12);
                 bamboos[2].y = bamboos[0].y;
                 bamboos[2].color = LIGHT_GREEN;
 
                 bamboos[3] = new Bamboo();
                 bamboos[3].x = bamboos[0].x;
-                bamboos[3].y = (yDim/4) + height + 18;
+                bamboos[3].y = (TILE_HEIGHT/4) + height + 28;
                 bamboos[3].color = Color.BLUE;
 
                 bamboos[4] = new Bamboo();
@@ -201,35 +199,35 @@ public class BambooTile extends RankTile
                 bamboos[5].color = Color.BLUE;
 
                 bamboos[6] = new Bamboo();
-                bamboos[6].x = (xDim/2) - (width/2) - 10;
-                bamboos[6].y = (yDim/3) + 6;
+                bamboos[6].x = (TILE_WIDTH/2) - (width/2) - 7;
+                bamboos[6].y = (TILE_HEIGHT/3) + 6;
                 bamboos[6].color = BLOOD_RED;
 
                 bamboos[7] = new Bamboo();
-                bamboos[7].x = (xDim/2) + (width/2) + 2;
+                bamboos[7].x = (TILE_WIDTH/2) + (width/2) + 6;
                 bamboos[7].y = bamboos[6].y;
                 bamboos[7].color = BLOOD_RED;
                 break;
 
             case 9:
                 bamboos[0] = new Bamboo();
-                bamboos[0].x = (xDim/4) - (width/2);
-                bamboos[0].y = (yDim/4) - 18;
+                bamboos[0].x = (TILE_WIDTH/4) - (width/2);
+                bamboos[0].y = (TILE_HEIGHT/4) - 18;
                 bamboos[0].color = BLOOD_RED;
 
                 bamboos[1] = new Bamboo();
-                bamboos[1].x = (xDim/2) - (width/2);
+                bamboos[1].x = (TILE_WIDTH/2) - (width/2);
                 bamboos[1].y = bamboos[0].y;
                 bamboos[1].color = Color.BLUE;
 
                 bamboos[2] = new Bamboo();
-                bamboos[2].x = (xDim/4)*3 - (width/2);
+                bamboos[2].x = (TILE_WIDTH/4)*3 - (width/2);
                 bamboos[2].y = bamboos[0].y;
                 bamboos[2].color = LIGHT_GREEN;
 
                 bamboos[3] = new Bamboo();
                 bamboos[3].x = bamboos[0].x;
-                bamboos[3].y = (yDim/3) + 6;
+                bamboos[3].y = (TILE_HEIGHT/3) + 6;
                 bamboos[3].color = BLOOD_RED;
 
                 bamboos[4] = new Bamboo();
@@ -244,7 +242,7 @@ public class BambooTile extends RankTile
 
                 bamboos[6] = new Bamboo();
                 bamboos[6].x = bamboos[0].x;
-                bamboos[6].y = (yDim/4) + height + 18;
+                bamboos[6].y = (TILE_HEIGHT/4) + height + 28;
                 bamboos[6].color = BLOOD_RED;
 
                 bamboos[7] = new Bamboo();
@@ -264,7 +262,7 @@ public class BambooTile extends RankTile
 
     }
 
-    public String toString()
+    @Override public String toString()
     {
         // Should return something like "Bamboo 7"
         return "Bamboo " + rank;
@@ -311,7 +309,7 @@ public class BambooTile extends RankTile
 
     }
 
-    public void paintComponent(Graphics g)
+    @Override public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
 

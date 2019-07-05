@@ -6,7 +6,7 @@ public class Bamboo1Tile extends PictureTile
         setToolTipText(toString());
     }
 
-    public String toString()
+    @Override public String toString()
     {
         return "Bamboo 1";
     }

@@ -8,40 +8,36 @@ public class PictureTile extends Tile
 
     public PictureTile(String name)
     {
-        this.name = name;
-
-        this.name = name; // "Chrysanthemum", "Orchid", "Plumb", "Bamboo", "Spring", "Summer", "Fall", "Winter"
+        this.name = name;   // "Chrysanthemum", "Orchid", "Plumb", "Bamboo", "Spring", "Summer", "Fall", "Winter"
         setToolTipText(toString());
-
-        //image = Toolkit.getDefaultToolkit().getImage("images/arches11.jpg");
 
         switch (name) {
             case "Bamboo":
-                image = Toolkit.getDefaultToolkit().getImage("images/Bamboo.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Bamboo.png");
                 break;
             case "Chrysanthemum":
-                image = Toolkit.getDefaultToolkit().getImage("images/Chrysanthemum.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Chrysanthemum.png");
                 break;
             case "Fall":
-                image = Toolkit.getDefaultToolkit().getImage("images/Fall.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Fall.png");
                 break;
             case "Orchid":
-                image = Toolkit.getDefaultToolkit().getImage("images/Orchid.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Orchid.png");
                 break;
             case "Plum":
-                image = Toolkit.getDefaultToolkit().getImage("images/Plum.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Plum.png");
                 break;
             case "Spring":
-                image = Toolkit.getDefaultToolkit().getImage("images/Spring.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Spring.png");
                 break;
             case "Summer":
-                image = Toolkit.getDefaultToolkit().getImage("images/Summer.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Summer.png");
                 break;
             case "Winter":
-                image = Toolkit.getDefaultToolkit().getImage("images/Winter.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Winter.png");
                 break;
             case "Sparrow":
-                image = Toolkit.getDefaultToolkit().getImage("images/Sparrow.png");
+                image = Toolkit.getDefaultToolkit().getImage("src/images/Sparrow.png");
                 break;
             default:
                 System.err.println("Faulty name: " + name);
@@ -59,10 +55,6 @@ public class PictureTile extends Tile
                         "Image Error", JOptionPane.ERROR_MESSAGE);
             }
 
-            // 3rd parameter is slow but good for scaling. Increases width by 50% Height of -1 double dimension
-            //image = image.getScaledInstance((int) (image.getWidth(this) * 1.5), -1, Image.SCALE_SMOOTH);
-            //image = image.getScaledInstance(600, 400, Image.SCALE_SMOOTH);
-
             tracker.addImage(image, 0);        // Adds image to tracker
 
             try {
@@ -73,16 +65,16 @@ public class PictureTile extends Tile
             }
     }
 
-    public String toString()
+    @Override public String toString()
     {
         return name;
     }
 
-    public void paintComponent(Graphics g)
+    @Override public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        //g.drawImage(image, 12, 30, this);
-        g.drawImage(image, (getWidth() / 4) - 9, (getHeight() / 4) - 5, this);
+
+        g.drawImage(image, (TILE_WIDTH/4) - 8, (TILE_HEIGHT/4) + 6, this);
     }
 
     public static void main(String[] args)

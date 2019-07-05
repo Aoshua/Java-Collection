@@ -4,8 +4,8 @@ import java.awt.*;
 public class CircleTile extends RankTile
 {
     private Circle[] circles;
-    private int xDim = 80;
-    private int yDim = 118;
+    private int xDim = TILE_WIDTH;
+    private int yDim = TILE_HEIGHT + 12;
     private int diameter = 20;
 
     public CircleTile(int rank)
@@ -273,9 +273,8 @@ public class CircleTile extends RankTile
         }
     }
 
-    public String toString()
+    @Override public String toString()
     {
-        // Returns something like "Circle 5"
         return "Circle " + rank;
     }
 
@@ -304,8 +303,7 @@ public class CircleTile extends RankTile
 
     public class Pancake extends Circle
     {
-        // Do stuff
-        public void draw(Graphics g)
+        @Override public void draw(Graphics g)
         {
             int x = (xDim/2), y = (yDim/2);
 
@@ -318,7 +316,7 @@ public class CircleTile extends RankTile
 
     }
 
-    public void paintComponent(Graphics g)
+    @Override public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
 
@@ -328,7 +326,6 @@ public class CircleTile extends RankTile
                 c.draw(g);
         }
 
-        //System.out.println("paintComponent");
     }
 
     public static void main(String[] args)

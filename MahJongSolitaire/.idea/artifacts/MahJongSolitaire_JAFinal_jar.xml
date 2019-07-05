@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MahJongSolitaire_JAFinal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MahJongSolitaire_JAFinal_jar</output-path>
+    <root id="archive" name="MahJongSolitaire_JAFinal.jar">
+      <element id="module-output" name="MahJongSolitaire_JAFinal" />
+    </root>
+  </artifact>
+</component>
